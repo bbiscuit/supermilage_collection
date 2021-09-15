@@ -4,8 +4,10 @@ cmake_minimum_required(VERSION 3.12)
 # Include build functions from Pico SDK
 include(../pico-sdk/external/pico_sdk_import.cmake)
 
-# Set name of project (as PROJECT_NAME) and C/C++ standards
+# It can't compile test projects so we do this
 set(CMAKE_TRY_COMPILE_TARGET_TYPE "STATIC_LIBRARY")
+
+# Set name of project (as PROJECT_NAME) and C/C++ standards
 project(blink C CXX ASM)
 set(CMAKE_C_STANDARD 11)
 set(CMAKE_CXX_STANDARD 17)
@@ -15,7 +17,7 @@ pico_sdk_init()
 
 # Tell CMake where to find the executable source file
 add_executable(${PROJECT_NAME} 
-    main.c
+    main.cpp
 )
 
 # Create map/bin/hex/uf2 files
