@@ -1,6 +1,8 @@
 # Set minimum required version of CMake
 cmake_minimum_required(VERSION 3.12)
 
+set(PICO_PLATFORM_CMAKE_FILE, "/Users/arkinsolomon/Documents/Supermileage/pico-sdk/src/rp2040.cmake")
+
 # Include build functions from Pico SDK
 include(../pico-sdk/external/pico_sdk_import.cmake)
 
