@@ -112,11 +112,10 @@ class SSD1306_I2C(SSD1306):
     
     # Show basic information on boot
     def show_info(self):
-        self.text("ADDRESS: %s" % hex(addr).upper(), 0 , 0)
-        self.text("CONFIG:  %s" % str(i2c), 0, 10)
-        self.text("DISPLAY: %dx%d" % (width, height), 0 , 20)
+        self.text("ADDRESS: %s" % hex(self.addr).upper(), 0 , 0)
+        self.text("CONFIG:  %s" % str(self.i2c), 0, 10)
+        self.text("DISPLAY: %dx%d" % (self.width, self.height), 0 , 20)
         self.show()
-        time.sleep(2)
 
     def write_cmd(self, cmd):
         self.temp[0] = 0x80  # Co=1, D/C#=0
